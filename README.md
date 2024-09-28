@@ -2,7 +2,7 @@
 
 ## Overview
 
-The Simple Messenger App is a lightweight application designed to facilitate communication between users. It supports messaging, user profiles, and comments, providing a seamless user experience. The app is built using modern web technologies and follows best practices in software development.
+The Simple Messenger App is a lightweight application designed to facilitate communication between users. It supports messaging, user profiles, and comments, providing a seamless user experience. The app is built using java restful API.
 
 ## Features
 
@@ -31,6 +31,8 @@ To run the Simple Messenger App locally, follow these steps:
 ### Messages
 - **`GET /api/messages`**: Retrieve all messages.
 - **`POST /api/messages`**: Send a new message.
+- **`GET /api/messages/{message-id}`**: Retrieve messages by user id.
+-  **`DELETE /api/messages/{message-id}`**: Delete messages by user id.
 
 ### Profiles
 - **`GET /api/profiles`**: Retrieve all user profiles.
@@ -39,3 +41,4 @@ To run the Simple Messenger App locally, follow these steps:
 ### Comments
 - **`GET /api/comments`**: Retrieve all comments.
 - **`POST /api/comments`**: Add a new comment.
+- **`DELETE /api/comments/{profile-Id}/{cpmment-id}`**: Delete comment using caomment id and message id.
