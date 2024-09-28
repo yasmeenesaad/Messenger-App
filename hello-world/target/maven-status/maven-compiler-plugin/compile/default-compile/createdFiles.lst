@@ -1,0 +1,16 @@
+Model\ErrorMessage.class
+com\iti\jets\MyResource.class
+Model\Comment.class
+Resources\MessageResource.class
+Model\Link.class
+Exception\DataNotFoundException.class
+Model\Profile.class
+Resources\CommentResource.class
+Exception\GenericExceptionMapper.class
+Exception\DataNotFoundExceptionMapper.class
+Resources\ProfileResource.class
+Model\Message.class
+Service\MessageService.class
+Service\CommentService.class
+database\DatabaseClass.class
+Service\ProfileService.class

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This web.xml file is not required when using Servlet 3.0 container,
+     see implementation details http://jersey.java.net/nonav/documentation/latest/jax-rs.html -->
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+    <servlet>
+        <servlet-name>Jersey Web Application</servlet-name>
+        <servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>
+        <init-param>
+            <param-name>jersey.config.server.provider.packages</param-name>
+            <param-value>com.iti.jets</param-value>
+<!--            <param-value>Resources</param-value>-->
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Jersey Web Application</servlet-name>
+        <url-pattern>/webapi/*</url-pattern>
+    </servlet-mapping>
+
+
+
+
+    <!-- New servlet for calling resources from a different package -->
+    <servlet>
+        <!-- Unique name for the new servlet -->
+        <servlet-name>ResourceServlet</servlet-name>
+
+        <!-- Specify the Jersey servlet to handle this new servlet as well -->
+        <servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>
+
+        <!-- Init parameters specifying the new package containing the resources -->
+        <init-param>
+            <param-name>jersey.config.server.provider.packages</param-name>
+            <!-- Specify the new package containing additional resource classes -->
+            <param-value>Resources</param-value>
+        </init-param>
+
+        <!-- Load this servlet on startup as well -->
+        <load-on-startup>2</load-on-startup>
+    </servlet>
+
+    <!-- Mapping for the new servlet -->
+    <servlet-mapping>
+        <servlet-name>ResourceServlet</servlet-name>
+        <!-- URL pattern to access the new resources, e.g., /api/resource -->
+        <url-pattern>/api/*</url-pattern>
+    </servlet-mapping>
+
+
+
+
+
+
+
+</web-app>
